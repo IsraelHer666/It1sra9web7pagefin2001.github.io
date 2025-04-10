@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estados Financieros BIHS 2001</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-sans">
+  <header class="bg-blue-600 text-white py-6 shadow-lg animate__animated animate__fadeInDown">
+    <h1 class="text-4xl text-center font-bold">¿Qué son los Estados Financieros?</h1>
+    <p class="text-center mt-2 text-lg px-4">Los estados financieros son informes contables que muestran la situación económica de una empresa. Permiten analizar su rentabilidad, liquidez y estructura financiera.</p>
+  </header>
+
+  <main class="p-6">
+    <section class="grid md:grid-cols-3 gap-6 my-10 animate__animated animate__fadeInUp">
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition duration-300">
+        <h2 class="text-2xl font-bold text-blue-600">Estado de Resultados</h2>
+        <p class="mt-2">Muestra los ingresos, costos y gastos durante un periodo. Permite conocer si la empresa ganó o perdió dinero.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition duration-300">
+        <h2 class="text-2xl font-bold text-green-600">Balance General</h2>
+        <p class="mt-2">Refleja los activos, pasivos y el capital contable en una fecha determinada. Indica la salud financiera de la empresa.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition duration-300">
+        <h2 class="text-2xl font-bold text-purple-600">Estado de Flujo de Efectivo</h2>
+        <p class="mt-2">Detalla cómo entra y sale el dinero de la empresa. Evalúa la capacidad para generar efectivo y cumplir obligaciones.</p>
+      </div>
+    </section>
+
+    <section class="bg-white rounded-2xl shadow-lg p-6 mt-10 animate__animated animate__fadeIn">
+      <h3 class="text-2xl font-bold text-center mb-4">¿Para qué sirven?</h3>
+      <ul class="list-disc list-inside text-lg">
+        <li>Tomar decisiones estratégicas (inversión, expansión, recorte de gastos)</li>
+        <li>Evaluar el desempeño financiero a lo largo del tiempo</li>
+        <li>Presentar la situación financiera ante bancos, inversionistas o autoridades</li>
+        <li>Comparar el rendimiento con otras empresas del sector</li>
+      </ul>
+    </section>
+
+    <section class="mt-10 bg-white rounded-2xl shadow-lg p-6 animate__animated animate__fadeIn">
+      <h3 class="text-xl font-semibold text-center mb-4">Ejemplo visual de resultados financieros</h3>
+      <canvas id="chart" height="100"></canvas>
+    </section>
+  </main>
+
+  <script>
+    const ctx = document.getElementById('chart').getContext('2d');
+    const chart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Enero', 'Febrero', 'Marzo', 'Abril'],
+        datasets: [{
+          label: 'Ganancias ($)',
+          data: [3000, 4500, 3200, 5000],
+          backgroundColor: '#3B82F6'
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+      <p class="text-center mt-2 text-lg px-4">Bryan Israel Hernandez San Juan 2001</p>
+
+</body>
+
+</html>
